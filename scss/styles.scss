@@ -1,0 +1,181 @@
+@import './node_modules/normalize.scss/normalize';
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700');
+
+
+@font-face {
+	font-family: 'BebasNeue Thin';
+	src: url(../fonts/bebasneue_thin-webfont.eot); 
+	src: url(../fonts/bebasneue_thin-webfont.eot) format('embedded-opentype'),
+		url('../fonts/BebasNeue Thin.otf') format("otf"),
+		url(../fonts/bebasneue_thin-webfont.woff) format("woff"),
+		url(../fonts/bebasneue_thin-webfont.woff2) format("woff2");
+}
+
+@font-face {
+	font-family: 'BebasNeue Regular';
+	src: url(../fonts/bebasneue_regular-webfont.eot);
+	src: url(../fonts/bebasneue_regular-webfont.eot) format('embedded-opentype'),
+		url('../fonts/BebasNeue Regular.otf') format("otf"),
+		url(../fonts/bebasneue_regular-webfont.ttf) format("ttf"),
+		url(../fonts/bebasneue_regular-webfont.woff) format("woff"),
+		url(../fonts/bebasneue_regular-webfont.woff2) format("woff2");
+}
+
+@font-face {
+	font-family: 'BebasNeue Bold';
+	src: url(../fonts/bebasneue_bold-webfont.eot); 
+	src: url(../fonts/bebasneue_bold-webfont.eot) format('embedded-opentype'),
+		url('../fonts/BebasNeue Bold.otf') format("otf"),
+		url(../fonts/bebasneue_bold-webfont.ttf) format("ttf"),
+		url(../fonts/bebasneue_bold-webfont.woff) format("woff"),
+		url(../fonts/bebasneue_bold-webfont.woff2)  format("woff2");
+}
+
+$blue: #6fcffb;
+$red: #fd8d7b;
+
+* {
+	box-sizing: border-box;
+}
+
+html, body {
+	min-height: 100%;
+}
+
+body {
+	color:  #3c3c3c;
+	font: 300 16px/1.4 'Roboto', Arial, sans-serif;
+	background: #9789f9;
+}
+
+.ba-container {
+	width: 1200px;
+	padding: 0 20px;
+	margin: 0 auto;
+}
+
+.ba-pricing {
+	height: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	.no-flexbox & {
+		font-size: 0;
+		text-align: center;	
+	}
+	&__col {
+		width: 330px;
+		background: #f5f4f9;
+		background: #00ff00;
+		padding: 40px 0 60px;
+		display: flex;
+		flex-direction: column;
+		position: relative;
+		&--center {
+			width: 370px;
+		}
+		.no-flexbox & {
+			display: inline-block;
+			font-size: 14px;
+			vertical-align: middle;
+			margin: 0 20px;
+		}
+	}
+
+}
+
+.ba-price {
+	text-align: center;
+	&__rate {
+		display: inline-block;
+		margin: 0;
+		font: 60px/1 'BebasNeue Thin', Arial, sans-serif;
+		position: relative;
+		&:before, &:after {
+			position: absolute;
+			font-size: 16px;
+		}
+		&:before {
+			content: '$';
+			top: 6px;
+			left: -10px;
+		}
+		&:after {
+			content: '/hr';
+			text-transform: uppercase;
+			bottom: 7px;
+		}
+	}
+	&__position {
+		margin-top: 10px;
+		font: 24px/1.5 'BebasNeue Regular', Arial, sans-serif;
+	}
+	&__body {
+		background: #fff;
+		padding: 10px 90px 60px;
+		background: radial-gradient(28em at bottom, #fff 94%, #00ff00 94%);
+		ul {
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+			text-align: left;
+			display: inline-block;
+			& li {
+				padding: 15px 0;
+			}
+		}
+	}
+	&__img {
+		display: block;
+		margin: 30px auto;
+	}
+	.ba-pricing__col--center & {
+		position: relative;			
+	}
+}
+
+.ba-button {
+	display: inline-block;
+	text-transform: uppercase;
+	text-decoration: none;
+	color: #fff;
+	width: 200px;
+	height: 55px;
+	background: $blue;
+	border: 2px solid $blue;
+	border-radius: 27px;
+	font: 18px/55px 'BebasNeue Regular', Arial, sans-serif;
+	transition: all .25s ease;
+	&:hover,
+	&:focus,
+	&:active {
+		background: #fff;
+		color: $blue; 
+	}
+	.ba-pricing__col & {
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		margin-left: -100px;
+		margin-bottom: -27px;
+	}
+	.ba-pricing__col--center & {
+		background: $red;
+		border: 2px solid $red;
+		&:hover,
+		&:focus,
+		&:active {
+			background: #fff;
+			color: $red; 
+		}
+	}
+}
+
+.ba-label {
+	color: #a9a9a9;
+	font: 300 11px/1 Roboto, sans-serif;
+	margin-top: 50px;
+	text-align: center;
+}
+
